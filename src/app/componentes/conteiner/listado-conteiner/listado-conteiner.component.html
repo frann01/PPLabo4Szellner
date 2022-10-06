@@ -1,0 +1,19 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>color</th>
+            <th>capacidad</th>
+            <th>empresa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cont of servicioFb.conteiners">
+            <td>{{cont.codigo}}</td>
+            <td>{{cont.color}}</td>
+            <td>{{cont.capacidad}}</td>
+            <td>{{cont.empresa}}</td>
+        </tr>
+
+    </tbody>
+</table>

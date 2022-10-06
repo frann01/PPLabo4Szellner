@@ -1,0 +1,19 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of servicioFb.productos">
+            <td *ngIf="producto.stock > 0">{{producto.codigo}}</td>
+            <td *ngIf="producto.stock > 0">{{producto.descripcion}}</td>
+            <td *ngIf="producto.stock > 0">{{producto.precio}}</td>
+            <td *ngIf="producto.stock > 0">{{producto.stock}}</td>
+        </tr>
+
+    </tbody>
+</table>

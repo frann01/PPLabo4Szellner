@@ -1,0 +1,63 @@
+<div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <h2>Modificar conteiner</h2>      </div>
+  
+      <div class="row g-5">
+        <div class="col-md-7 col-lg-8">
+          <form [formGroup]="forma" (ngSubmit)="ModificarCon()">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <h3>{{conteiner.codigo}}</h3>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">color</label>
+                <input class="form-control" type="text" formControlName="color" placeholder="{{conteiner.color}}">
+                <small class="invalid"
+                *ngIf="forma.controls.color.errors?.required &&
+                forma.controls.color.touched">
+                El color es requerido
+              </small>
+              <small class="invalid"
+              *ngIf="forma.controls.color.errors?.containsSpaces &&
+              forma.controls.color.touched">
+              El color no puede contener espacios
+            </small>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">capacidad</label>
+                <input class="form-control" type="text" formControlName="capacidad" placeholder="{{conteiner.capacidad}}">
+                <small class="invalid"
+                *ngIf="forma.controls.capacidad.errors?.required &&
+                forma.controls.capacidad.touched">
+                La capacidad es requerida
+              </small>
+              <small class="invalid"
+              *ngIf="forma.controls.capacidad.errors?.min  &&
+              forma.controls.capacidad.touched">
+              El capacidad debe ser mayor a 0
+            </small>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">empresa</label>
+                <input class="form-control" type="text" formControlName="empresa" placeholder="{{conteiner.empresa}}">
+                <small class="invalid"
+                *ngIf="forma.controls.empresa.errors?.required &&
+                forma.controls.empresa.touched">
+                La empresa es requerida
+              </small>
+              </div>
+
+            </div>
+  
+            <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="forma.invalid">Modificar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+

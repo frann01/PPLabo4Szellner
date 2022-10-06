@@ -15,8 +15,10 @@ export class FirebaseServiceService {
   private productosBase?: AngularFirestoreCollection<any>;
   public productos: any[] = [];
 
-  private actoresBase?: AngularFirestoreCollection<any>;
-  public actores: any[] = [];
+  private ContBase?: AngularFirestoreCollection<any>;
+  public conteiners: any[] = [];
+
+
   traerProductos()
   {
     this.productosBase = this.afs.collection<any>('productos');
@@ -32,15 +34,16 @@ export class FirebaseServiceService {
   }
 
 
-  traerActores()
+
+  traerCont()
   {
-    this.actoresBase = this.afs.collection<any>('Actores');
-    return this.actoresBase.valueChanges().subscribe(actores =>
+    this.ContBase = this.afs.collection<any>('conteiners');
+    return this.ContBase.valueChanges().subscribe(cont =>
       {
-        this.actores=[];
-        actores.forEach(actor => {
-          console.info(actor)
-          this.actores.unshift(actor);
+        this.conteiners=[];
+        cont.forEach(cont => {
+          console.info(cont)
+          this.conteiners.unshift(cont);
         });
 
       })

@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Peliculas</a>
+      <a class="navbar-brand" href="#">Productos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,9 +10,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/bienvenido">Bienvenido</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">Busqueda</a>
-          </li>
+
           <li *ngIf="!loginS.isLogged" class="nav-item">
             <a class="nav-link" href="/login">login</a>
           </li>
@@ -26,7 +24,10 @@
             <button  routerLink="/productos/detalle">Producto Detalle</button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="actor/actorPelicula">Actores</a>
+            <button  routerLink="/productos/listado-publico">Listado Publico</button>
+          </li>
+          <li class="nav-item">
+            <button  routerLink="/Conteiner">Conteiner</button>
           </li>
         </ul>
         <form class="d-flex" role="search">
