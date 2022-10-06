@@ -1,0 +1,42 @@
+body{
+    display: flex;
+    border-radius: 15px;
+}
+
+.div_right
+{
+    float: right;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background-color: black;
+    border-radius: 15px;
+    width: 50%;
+}
+
+.div_left
+{
+    float: right;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background-color:aliceblue;
+    padding: 5%;
+    border-radius: 15px;
+    width: 50%;
+}
+
+.div_foto
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+}
+
+.img
+{
+    border-radius: 55%;
+    height: 10%;
+    width: 80%;
+}

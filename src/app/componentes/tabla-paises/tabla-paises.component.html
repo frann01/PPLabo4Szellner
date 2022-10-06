@@ -1,0 +1,11 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-primary">Paises</span>
+  </h4>
+  <ul class="list-group mb-3">
+    <li *ngFor="let pais of paises" tabindex="1" class="list-group-item d-flex justify-content-between lh-sm">
+      <button (click)="emitir(pais)" class="list-group-item d-flex justify-content-between lh-sm">
+        <h6 class="my-0">{{pais.name.common}}</h6>
+      </button>
+      <img src="{{pais.flags.svg}}" style="width: 20%;">
+    </li>
+  </ul>

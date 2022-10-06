@@ -1,0 +1,10 @@
+<div *ngIf="prodSeleccionado">
+    <h1>{{prodSeleccionado.descripcion}}</h1>
+    <h3>codigo: {{prodSeleccionado.codigo}}</h3>
+    <h3>precio: {{prodSeleccionado.precio}}</h3>
+    <h3>stock: {{prodSeleccionado.stock}}</h3>
+    <h3>comestible: {{prodSeleccionado.comestible}}</h3>
+    <h3>Pais: {{prodSeleccionado.pais.name.common}}</h3>
+    <img src="{{prodSeleccionado.pais.flags.svg}}" style="width: 40px;">
+</div>
+

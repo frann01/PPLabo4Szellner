@@ -1,0 +1,108 @@
+<div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <h2>Alta actor</h2>      </div>
+  
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <app-tabla-paises (paisSeleccionado)="TomoPaisSeleccionado($event)"></app-tabla-paises>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Actor</h4>
+          <form [formGroup]="forma" (ngSubmit)="agregarProd()">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Desripcion</label>
+                <input class="form-control" type="text" formControlName="descripcion">
+                <small class="invalid"
+                *ngIf="forma.controls.descripcion.errors?.required &&
+                forma.controls.descripcion.touched">
+                La descripcion es requerida
+              </small>
+              <small class="invalid"
+              *ngIf="forma.controls.descripcion.errors?.containsSpaces &&
+              forma.controls.descripcion.touched">
+              La descripcion no puede contener espacios
+            </small>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">codigo</label>
+                <input class="form-control" type="text" formControlName="codigo">
+                <small class="invalid"
+                *ngIf="forma.controls.codigo.errors?.required &&
+                forma.controls.codigo.touched">
+                El codigo es requerido
+              </small>
+              <small class="invalid"
+              *ngIf="forma.controls.codigo.errors?.containsSpaces &&
+              forma.controls.codigo.touched">
+              El codigo no puede contener espacios
+            </small>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">stock</label>
+                <input class="form-control" type="text" formControlName="stock">
+                <small class="invalid"
+                *ngIf="forma.controls.stock.errors?.required &&
+                forma.controls.stock.touched">
+                La stock es requerida
+              </small>
+              <small class="invalid"
+              *ngIf="forma.controls.stock.errors?.min  &&
+              forma.controls.stock.touched">
+              El stock debe ser mayor a 0
+            </small>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">precio</label>
+                <input class="form-control" type="text" formControlName="precio">
+                <small class="invalid"
+                *ngIf="forma.controls.precio.errors?.required &&
+                forma.controls.precio.touched">
+                La precio es requerido
+              </small>
+              <small class="invalid"
+              *ngIf="forma.controls.precio.errors?.min  &&
+              forma.controls.precio.touched">
+              El precio debe ser mayor a 0
+            </small>
+              </div>
+
+              <div class="col-sm-6">
+                <label  for="lastName" class="form-label">Comestible</label>
+                <select class="form-control"  formControlName="comestible">
+                  <option value="">Elija...</option>
+                  <option value="true">si</option>
+                  <option value="false">No</option>
+                </select>
+
+                <small class="invalid"
+              *ngIf="forma.controls.comestible.errors?.required &&
+              forma.controls.comestible.touched">
+              El comestible es requerido
+            </small>
+              </div>
+  
+              <div class="col-md-5">
+                <label for="country" class="form-label">Pais</label>
+                <input class="form-control" type="text" formControlName="pais" [(ngModel)]="pais_nombre">
+                <img *ngIf="pais" src="{{pais.flags.svg}}"  style="width: 20%;">
+                <small class="invalid"
+                *ngIf="forma.controls.pais.errors?.required &&
+                forma.controls.pais.touched">
+                El pais es requerido
+              </small>
+              </div>
+
+            </div>
+  
+            <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="forma.invalid">Agregar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
